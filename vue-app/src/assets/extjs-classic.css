@@ -1,0 +1,655 @@
+/*
+ * ExtJS Classic Theme Overrides for Tabler
+ * Inspired by ExtJS Classic (Neptune/Triton) theme:
+ * - Blue gradient toolbars/headers
+ * - Bordered panel system
+ * - Grid with column headers
+ * - Tree panel styling
+ * - Form field groups
+ * - Tab panels with top tabs
+ */
+
+:root {
+  /* ExtJS Classic Color Palette */
+  --ext-primary: #2a72b5;
+  --ext-primary-dark: #1e5a92;
+  --ext-primary-darker: #15497a;
+  --ext-primary-light: #dbe9f6;
+  --ext-header-bg: linear-gradient(to bottom, #6db1e5, #2a72b5);
+  --ext-toolbar-bg: #dfe9f5;
+  --ext-toolbar-border: #b5c8de;
+  --ext-panel-border: #a3b8d0;
+  --ext-grid-header-bg: linear-gradient(to bottom, #e8f0f8, #c8d8e8);
+  --ext-grid-row-alt: #f5f9fe;
+  --ext-grid-row-hover: #d9eaf7;
+  --ext-grid-row-selected: #c2d9f0;
+  --ext-grid-border: #d0d0d0;
+  --ext-grid-cell-border: #ededed;
+  --ext-tab-active-bg: #ffffff;
+  --ext-tab-inactive-bg: linear-gradient(to bottom, #d4dfef, #b8c9df);
+  --ext-tab-border: #8db2e3;
+  --ext-field-border: #b5b8c8;
+  --ext-field-focus-border: #7eadd9;
+  --ext-field-bg: #ffffff;
+  --ext-btn-default-bg: linear-gradient(to bottom, #f0f4fa, #d8e2f0);
+  --ext-btn-default-border: #a3b8d0;
+  --ext-body-bg: #e4e9f2;
+  --ext-tree-icon-color: #5b7a9e;
+  --ext-text-color: #333333;
+  --ext-text-muted: #666666;
+  --ext-status-bar-bg: #dfe9f5;
+}
+
+/* ========== Base Body ========== */
+body {
+  background-color: var(--ext-body-bg) !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, Arial, sans-serif;
+  font-size: 13px;
+  color: var(--ext-text-color);
+}
+
+/* ========== ExtJS Panel Component ========== */
+.ext-panel {
+  border: 1px solid var(--ext-panel-border);
+  border-radius: 0;
+  background: #fff;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.ext-panel-header {
+  background: var(--ext-header-bg);
+  color: #ffffff;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--ext-primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  user-select: none;
+}
+
+.ext-panel-header .panel-icon {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.ext-panel-header .panel-title {
+  flex: 1;
+}
+
+.ext-panel-header .panel-tools {
+  display: flex;
+  gap: 4px;
+}
+
+.ext-panel-header .panel-tool {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.ext-panel-header .panel-tool:hover {
+  opacity: 1;
+}
+
+.ext-panel-body {
+  padding: 8px;
+}
+
+.ext-panel-body.no-padding {
+  padding: 0;
+}
+
+/* ========== ExtJS Toolbar ========== */
+.ext-toolbar {
+  background: var(--ext-toolbar-bg);
+  border-bottom: 1px solid var(--ext-toolbar-border);
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 30px;
+  flex-wrap: wrap;
+}
+
+.ext-toolbar-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--ext-toolbar-border);
+  margin: 0 4px;
+}
+
+.ext-toolbar .ext-toolbar-text {
+  font-size: 12px;
+  color: var(--ext-text-muted);
+  padding: 0 4px;
+}
+
+/* ========== ExtJS-style Buttons ========== */
+.ext-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-family: inherit;
+  border: 1px solid var(--ext-btn-default-border);
+  background: var(--ext-btn-default-bg);
+  color: var(--ext-text-color);
+  cursor: pointer;
+  border-radius: 2px;
+  line-height: 1.4;
+  white-space: nowrap;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.ext-btn:hover {
+  background: linear-gradient(to bottom, #f8fafe, #e0e8f4);
+  border-color: #8eaac8;
+}
+
+.ext-btn:active {
+  background: linear-gradient(to bottom, #c8d4e6, #d8e2f0);
+}
+
+.ext-btn-primary {
+  background: var(--ext-header-bg);
+  color: #ffffff;
+  border-color: var(--ext-primary-dark);
+}
+
+.ext-btn-primary:hover {
+  background: linear-gradient(to bottom, #82c0f0, #3680c0);
+  color: #ffffff;
+}
+
+.ext-btn-primary:active {
+  background: linear-gradient(to bottom, #1e5a92, #2a72b5);
+}
+
+.ext-btn-danger {
+  background: linear-gradient(to bottom, #f0a0a0, #d05050);
+  color: #ffffff;
+  border-color: #b04040;
+}
+
+.ext-btn-danger:hover {
+  background: linear-gradient(to bottom, #f5b0b0, #e06060);
+  color: #ffffff;
+}
+
+.ext-btn-small {
+  padding: 2px 6px;
+  font-size: 11px;
+}
+
+.ext-btn-icon {
+  padding: 3px 6px;
+}
+
+.ext-btn[disabled],
+.ext-btn.disabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ========== ExtJS Grid ========== */
+.ext-grid {
+  border: 1px solid var(--ext-grid-border);
+  background: #fff;
+  overflow: auto;
+}
+
+.ext-grid table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.ext-grid thead th {
+  background: var(--ext-grid-header-bg);
+  border-right: 1px solid #c0cfe0;
+  border-bottom: 1px solid #a0b4cc;
+  padding: 6px 8px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  position: relative;
+  white-space: nowrap;
+  user-select: none;
+  cursor: default;
+}
+
+.ext-grid thead th.sortable {
+  cursor: pointer;
+}
+
+.ext-grid thead th.sortable:hover {
+  background: linear-gradient(to bottom, #f0f6fc, #d4e2f0);
+}
+
+.ext-grid thead th .sort-indicator {
+  margin-left: 4px;
+  font-size: 10px;
+  color: #666;
+}
+
+.ext-grid thead th .col-resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  cursor: col-resize;
+}
+
+.ext-grid tbody td {
+  padding: 4px 8px;
+  border-right: 1px solid var(--ext-grid-cell-border);
+  border-bottom: 1px solid var(--ext-grid-cell-border);
+  color: var(--ext-text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ext-grid tbody tr:nth-child(even) {
+  background: var(--ext-grid-row-alt);
+}
+
+.ext-grid tbody tr:hover {
+  background: var(--ext-grid-row-hover) !important;
+}
+
+.ext-grid tbody tr.selected {
+  background: var(--ext-grid-row-selected) !important;
+}
+
+.ext-grid tbody tr.selected td {
+  color: #1a3a5c;
+}
+
+/* Grid checkbox column */
+.ext-grid .row-checker {
+  width: 24px;
+  text-align: center;
+}
+
+.ext-grid .row-checker input {
+  margin: 0;
+}
+
+/* ========== ExtJS Paging Toolbar ========== */
+.ext-paging-toolbar {
+  background: var(--ext-toolbar-bg);
+  border-top: 1px solid var(--ext-toolbar-border);
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--ext-text-muted);
+  flex-wrap: wrap;
+}
+
+.ext-paging-toolbar .page-info {
+  margin-left: auto;
+}
+
+/* ========== ExtJS Tab Panel ========== */
+.ext-tab-panel {
+  border: 1px solid var(--ext-tab-border);
+  background: #fff;
+}
+
+.ext-tab-bar {
+  display: flex;
+  background: linear-gradient(to bottom, #c8d8ec, #aec2dc);
+  border-bottom: 1px solid var(--ext-tab-border);
+  padding: 2px 4px 0;
+  gap: 1px;
+}
+
+.ext-tab {
+  padding: 5px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  color: var(--ext-text-color);
+  background: var(--ext-tab-inactive-bg);
+  user-select: none;
+  position: relative;
+  top: 1px;
+  transition: background 0.15s;
+}
+
+.ext-tab:hover {
+  background: linear-gradient(to bottom, #e0e8f4, #c8d4e6);
+}
+
+.ext-tab.active {
+  background: var(--ext-tab-active-bg);
+  border-color: var(--ext-tab-border);
+  color: #1a3a5c;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.ext-tab-body {
+  padding: 10px;
+}
+
+/* ========== ExtJS Tree Panel ========== */
+.ext-tree {
+  font-size: 12px;
+  padding: 4px 0;
+  user-select: none;
+}
+
+.ext-tree-node {
+  padding-left: 0;
+}
+
+.ext-tree-node-content {
+  display: flex;
+  align-items: center;
+  padding: 2px 8px 2px 0;
+  cursor: pointer;
+  border-radius: 0;
+  gap: 2px;
+  min-height: 24px;
+}
+
+.ext-tree-node-content:hover {
+  background: var(--ext-grid-row-hover);
+}
+
+.ext-tree-node-content.selected {
+  background: var(--ext-grid-row-selected);
+}
+
+.ext-tree-expander {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #666;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.ext-tree-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--ext-tree-icon-color);
+  flex-shrink: 0;
+  margin-right: 3px;
+}
+
+.ext-tree-label {
+  color: var(--ext-text-color);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ext-tree-children {
+  padding-left: 18px;
+}
+
+/* ========== ExtJS Form Fields ========== */
+.ext-form-field {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.ext-form-field label {
+  width: 120px;
+  min-width: 120px;
+  text-align: right;
+  padding: 5px 8px 0 0;
+  color: var(--ext-text-color);
+  font-weight: normal;
+}
+
+.ext-form-field .field-body {
+  flex: 1;
+}
+
+.ext-form-field input[type="text"],
+.ext-form-field input[type="email"],
+.ext-form-field input[type="password"],
+.ext-form-field input[type="number"],
+.ext-form-field input[type="date"],
+.ext-form-field textarea,
+.ext-form-field select {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid var(--ext-field-border);
+  background: var(--ext-field-bg);
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--ext-text-color);
+  border-radius: 1px;
+  transition: border-color 0.15s;
+}
+
+.ext-form-field input:focus,
+.ext-form-field textarea:focus,
+.ext-form-field select:focus {
+  outline: none;
+  border-color: var(--ext-field-focus-border);
+  box-shadow: 0 0 0 1px rgba(126, 173, 217, 0.3);
+}
+
+.ext-form-field textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.ext-form-field .field-help {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+/* ========== ExtJS Fieldset ========== */
+.ext-fieldset {
+  border: 1px solid #c0c8d8;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.ext-fieldset legend {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ext-primary);
+  padding: 0 6px;
+}
+
+/* ========== ExtJS Window/Dialog ========== */
+.ext-window-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ext-window {
+  border: 1px solid var(--ext-primary-dark);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  background: #fff;
+  min-width: 300px;
+}
+
+.ext-window .ext-panel-header {
+  cursor: move;
+}
+
+.ext-window-footer {
+  background: var(--ext-toolbar-bg);
+  border-top: 1px solid var(--ext-toolbar-border);
+  padding: 6px 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+/* ========== ExtJS Status Bar ========== */
+.ext-statusbar {
+  background: var(--ext-status-bar-bg);
+  border-top: 1px solid var(--ext-toolbar-border);
+  padding: 3px 8px;
+  font-size: 11px;
+  color: var(--ext-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ext-statusbar .status-icon {
+  font-size: 12px;
+}
+
+.ext-statusbar .status-text {
+  flex: 1;
+}
+
+/* ========== Sidebar / Navigation ========== */
+.ext-nav-sidebar {
+  background: #e4e9f2;
+  border-right: 1px solid var(--ext-panel-border);
+  overflow-y: auto;
+}
+
+/* ========== Splitter ========== */
+.ext-splitter {
+  width: 6px;
+  background: var(--ext-toolbar-bg);
+  border-left: 1px solid var(--ext-toolbar-border);
+  border-right: 1px solid var(--ext-toolbar-border);
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ext-splitter::after {
+  content: "⋮";
+  color: #999;
+  font-size: 14px;
+}
+
+/* ========== Layout Helpers ========== */
+.ext-viewport {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ext-viewport-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ext-region-center {
+  flex: 1;
+  overflow: auto;
+  padding: 8px;
+}
+
+.ext-region-west {
+  width: 240px;
+  overflow: auto;
+  flex-shrink: 0;
+}
+
+/* ========== Overrides for Tabler cards to look ExtJS-like ========== */
+.card {
+  border-radius: 0 !important;
+  border-color: var(--ext-panel-border) !important;
+}
+
+.card-header {
+  border-radius: 0 !important;
+  background: var(--ext-header-bg) !important;
+  color: #ffffff !important;
+  padding: 6px 10px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-bottom-color: var(--ext-primary-dark) !important;
+}
+
+.card-header .card-title {
+  color: #ffffff !important;
+  font-size: 13px !important;
+}
+
+.card-footer {
+  background: var(--ext-toolbar-bg) !important;
+  border-top-color: var(--ext-toolbar-border) !important;
+}
+
+/* Tabler table overrides */
+.table thead th {
+  background: var(--ext-grid-header-bg) !important;
+  border-right: 1px solid #c0cfe0;
+  font-size: 12px;
+  padding: 6px 8px !important;
+}
+
+.table tbody tr:nth-child(even) {
+  background: var(--ext-grid-row-alt);
+}
+
+.table tbody tr:hover {
+  background: var(--ext-grid-row-hover) !important;
+}
+
+/* Tabler nav override for ExtJS tab look */
+.nav-tabs .nav-link {
+  border-radius: 3px 3px 0 0 !important;
+  font-size: 12px;
+}
+
+/* ========== Utility ========== */
+.ext-text-muted {
+  color: var(--ext-text-muted);
+}
+
+.ext-mb-0 {
+  margin-bottom: 0;
+}
+
+.ext-gap-4 {
+  gap: 4px;
+}
