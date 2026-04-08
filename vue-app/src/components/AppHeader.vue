@@ -22,15 +22,21 @@
 
     <div style="flex: 1;"></div>
 
+    <!-- Theme Switcher -->
+    <ThemeSwitcher />
+
+    <div class="ext-toolbar-separator"></div>
+
     <!-- Right-side tools -->
     <span class="ext-toolbar-text">Admin</span>
-    <button class="ext-btn ext-btn-small">&#9881; Settings</button>
+    <button class="ext-btn ext-btn-small" @click="navigate('/components')">&#128300; Components</button>
     <button class="ext-btn ext-btn-small">&#8635; Refresh</button>
   </div>
 </template>
 
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
+import ThemeSwitcher from '@/components/ThemeSwitcher.vue'
 
 const router = useRouter()
 const route = useRoute()

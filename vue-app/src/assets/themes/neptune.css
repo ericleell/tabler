@@ -1,0 +1,81 @@
+/*
+ * Neptune Theme
+ * Modern flat design with teal/cyan accents
+ * Inspired by ExtJS Neptune theme - cleaner, flatter look
+ */
+
+[data-theme='neptune'] {
+  /* Neptune Color Palette - Teal-centered flat design */
+  --ext-primary: #118899;
+  --ext-primary-dark: #0d6d7a;
+  --ext-primary-darker: #0a545d;
+  --ext-primary-light: #d5f0f4;
+  --ext-header-bg: #118899;
+  --ext-toolbar-bg: #ecf5f7;
+  --ext-toolbar-border: #b7d9df;
+  --ext-panel-border: #c0d8dd;
+  --ext-grid-header-bg: #e4eef0;
+  --ext-grid-row-alt: #f4fafb;
+  --ext-grid-row-hover: #d5f0f4;
+  --ext-grid-row-selected: #b2e0e8;
+  --ext-grid-border: #d0dde0;
+  --ext-grid-cell-border: #e8eef0;
+  --ext-tab-active-bg: #ffffff;
+  --ext-tab-inactive-bg: #d0e4e8;
+  --ext-tab-border: #91c8d2;
+  --ext-field-border: #b7c4c8;
+  --ext-field-focus-border: #118899;
+  --ext-field-bg: #ffffff;
+  --ext-btn-default-bg: #f0f5f6;
+  --ext-btn-default-border: #b7c4c8;
+  --ext-body-bg: #e8f0f2;
+  --ext-tree-icon-color: #5a8a92;
+  --ext-text-color: #2c3e42;
+  --ext-text-muted: #5a7a82;
+  --ext-status-bar-bg: #ecf5f7;
+  --ext-btn-primary-bg: #118899;
+  --ext-btn-primary-hover-bg: #0d6d7a;
+  --ext-btn-primary-text: #ffffff;
+  --ext-btn-danger-bg: #cc3333;
+  --ext-btn-danger-hover-bg: #aa2222;
+  --ext-btn-danger-text: #ffffff;
+  --ext-window-mask-bg: rgba(0, 30, 40, 0.35);
+  --ext-fieldset-border: #b7d9df;
+  --ext-splitter-bg: #cce0e4;
+  --ext-splitter-hover-bg: #a0c8d0;
+  --ext-selection-bg: #b2e0e8;
+  --ext-selection-text: #0d6d7a;
+  --ext-progress-bg: #d5e8ec;
+  --ext-progress-bar-bg: #118899;
+  --ext-progress-text: #ffffff;
+  --ext-breadcrumb-color: #5a8a92;
+  --ext-breadcrumb-active: #0d6d7a;
+  --ext-tooltip-bg: #0a545d;
+  --ext-tooltip-text: #ffffff;
+  --ext-messagebox-icon-info: #118899;
+  --ext-messagebox-icon-warning: #e6a817;
+  --ext-messagebox-icon-error: #cc3333;
+  --ext-messagebox-icon-question: #118899;
+}
+
+/* Neptune overrides - remove gradients for flat look */
+[data-theme='neptune'] .ext-panel-header {
+  background: var(--ext-primary) !important;
+  border-radius: 0;
+}
+
+[data-theme='neptune'] .ext-btn {
+  border-radius: 3px;
+}
+
+[data-theme='neptune'] .ext-btn-primary {
+  border-radius: 3px;
+}
+
+[data-theme='neptune'] .ext-grid thead th {
+  background: var(--ext-grid-header-bg) !important;
+}
+
+[data-theme='neptune'] .ext-tab.active {
+  border-radius: 3px 3px 0 0;
+}

@@ -1,0 +1,124 @@
+/*
+ * Triton Theme
+ * Clean, modern material-inspired light theme
+ * Inspired by ExtJS Triton - whitespace, flat buttons, clean lines
+ */
+
+[data-theme='triton'] {
+  /* Triton Color Palette - Soft blue with clean whites */
+  --ext-primary: #2196f3;
+  --ext-primary-dark: #1976d2;
+  --ext-primary-darker: #0d47a1;
+  --ext-primary-light: #e3f2fd;
+  --ext-header-bg: #2196f3;
+  --ext-toolbar-bg: #fafbfc;
+  --ext-toolbar-border: #e0e0e0;
+  --ext-panel-border: #e0e0e0;
+  --ext-grid-header-bg: #f5f5f5;
+  --ext-grid-row-alt: #fafafa;
+  --ext-grid-row-hover: #e3f2fd;
+  --ext-grid-row-selected: #bbdefb;
+  --ext-grid-border: #e0e0e0;
+  --ext-grid-cell-border: #f0f0f0;
+  --ext-tab-active-bg: #ffffff;
+  --ext-tab-inactive-bg: #f0f0f0;
+  --ext-tab-border: #e0e0e0;
+  --ext-field-border: #bdbdbd;
+  --ext-field-focus-border: #2196f3;
+  --ext-field-bg: #ffffff;
+  --ext-btn-default-bg: #ffffff;
+  --ext-btn-default-border: #d0d0d0;
+  --ext-body-bg: #f0f2f5;
+  --ext-tree-icon-color: #757575;
+  --ext-text-color: #212121;
+  --ext-text-muted: #757575;
+  --ext-status-bar-bg: #fafbfc;
+  --ext-btn-primary-bg: #2196f3;
+  --ext-btn-primary-hover-bg: #1976d2;
+  --ext-btn-primary-text: #ffffff;
+  --ext-btn-danger-bg: #f44336;
+  --ext-btn-danger-hover-bg: #d32f2f;
+  --ext-btn-danger-text: #ffffff;
+  --ext-window-mask-bg: rgba(0, 0, 0, 0.4);
+  --ext-fieldset-border: #e0e0e0;
+  --ext-splitter-bg: #e8e8e8;
+  --ext-splitter-hover-bg: #bdbdbd;
+  --ext-selection-bg: #bbdefb;
+  --ext-selection-text: #0d47a1;
+  --ext-progress-bg: #e0e0e0;
+  --ext-progress-bar-bg: #2196f3;
+  --ext-progress-text: #ffffff;
+  --ext-breadcrumb-color: #757575;
+  --ext-breadcrumb-active: #1976d2;
+  --ext-tooltip-bg: #424242;
+  --ext-tooltip-text: #ffffff;
+  --ext-messagebox-icon-info: #2196f3;
+  --ext-messagebox-icon-warning: #ff9800;
+  --ext-messagebox-icon-error: #f44336;
+  --ext-messagebox-icon-question: #2196f3;
+}
+
+/* Triton overrides - clean material look */
+[data-theme='triton'] .ext-panel {
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='triton'] .ext-panel-header {
+  background: var(--ext-primary) !important;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 12px;
+}
+
+[data-theme='triton'] .ext-btn {
+  border-radius: 4px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+[data-theme='triton'] .ext-btn-primary {
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(33, 150, 243, 0.3);
+}
+
+[data-theme='triton'] .ext-tab-bar {
+  border-bottom: 2px solid #e0e0e0;
+  background: transparent;
+}
+
+[data-theme='triton'] .ext-tab {
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent !important;
+  margin-bottom: -2px;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+[data-theme='triton'] .ext-tab.active {
+  border-bottom-color: var(--ext-primary);
+  background: transparent !important;
+  color: var(--ext-primary);
+}
+
+[data-theme='triton'] .ext-grid thead th {
+  background: var(--ext-grid-header-bg) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+[data-theme='triton'] .ext-fieldset {
+  border-radius: 4px;
+}
+
+[data-theme='triton'] .ext-window {
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='triton'] .ext-statusbar {
+  background: var(--ext-status-bar-bg);
+  border-top: 1px solid #e0e0e0;
+}

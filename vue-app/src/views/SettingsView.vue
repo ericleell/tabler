@@ -49,10 +49,10 @@
             <div class="ext-form-field">
               <label>Theme:</label>
               <div class="field-body">
-                <select v-model="settings.theme">
-                  <option value="classic">Classic (ExtJS)</option>
-                  <option value="neptune">Neptune</option>
-                  <option value="triton">Triton</option>
+                <select v-model="settings.theme" @change="applyTheme">
+                  <option v-for="theme in availableThemes" :key="theme.id" :value="theme.id">
+                    {{ theme.name }} — {{ theme.description }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -179,9 +179,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import ExtPanel from '@/components/ExtPanel.vue'
 import ExtTabPanel from '@/components/ExtTabPanel.vue'
+import { themeStore } from '@/store/theme.js'
 
 const tabs = [
   { title: 'General', icon: '&#128295;' },
@@ -189,14 +190,24 @@ const tabs = [
   { title: 'Security', icon: '&#128274;' },
 ]
 
+const availableThemes = themeStore.availableThemes
+
 const settings = ref({
   appName: 'Tabler Vue App',
   description: 'A Vue 3 application using Tabler styles with ExtJS Classic theme',
   language: 'en',
   timezone: 'UTC',
-  theme: 'classic',
+  theme: themeStore.state.current,
   pageSize: 20,
 })
+
+onMounted(() => {
+  settings.value.theme = themeStore.state.current
+})
+
+function applyTheme() {
+  themeStore.setTheme(settings.value.theme)
+}
 
 const emailSettings = ref({
   smtpHost: 'smtp.example.com',

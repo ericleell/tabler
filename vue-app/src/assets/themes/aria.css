@@ -1,0 +1,202 @@
+/*
+ * Aria (Dark) Theme
+ * High contrast dark mode with accessible colors
+ * Inspired by ExtJS Aria / modern dark themes
+ */
+
+[data-theme='aria'] {
+  /* Aria Dark Color Palette */
+  --ext-primary: #5caaed;
+  --ext-primary-dark: #3d8fd4;
+  --ext-primary-darker: #2b74b5;
+  --ext-primary-light: #1e3a5c;
+  --ext-header-bg: #1a2d42;
+  --ext-toolbar-bg: #1e2d3d;
+  --ext-toolbar-border: #2a4055;
+  --ext-panel-border: #2a4055;
+  --ext-grid-header-bg: #1a2d42;
+  --ext-grid-row-alt: #162230;
+  --ext-grid-row-hover: #1e3a5c;
+  --ext-grid-row-selected: #264a6e;
+  --ext-grid-border: #2a4055;
+  --ext-grid-cell-border: #1e3040;
+  --ext-tab-active-bg: #1a2535;
+  --ext-tab-inactive-bg: #141e2a;
+  --ext-tab-border: #2a4055;
+  --ext-field-border: #3a5570;
+  --ext-field-focus-border: #5caaed;
+  --ext-field-bg: #0f1a25;
+  --ext-btn-default-bg: #1e2d3d;
+  --ext-btn-default-border: #3a5570;
+  --ext-body-bg: #0d1520;
+  --ext-tree-icon-color: #6daed4;
+  --ext-text-color: #d4dde6;
+  --ext-text-muted: #8a9bb0;
+  --ext-status-bar-bg: #1a2535;
+  --ext-btn-primary-bg: #2b74b5;
+  --ext-btn-primary-hover-bg: #3d8fd4;
+  --ext-btn-primary-text: #ffffff;
+  --ext-btn-danger-bg: #cc4444;
+  --ext-btn-danger-hover-bg: #dd5555;
+  --ext-btn-danger-text: #ffffff;
+  --ext-window-mask-bg: rgba(0, 0, 0, 0.6);
+  --ext-fieldset-border: #2a4055;
+  --ext-splitter-bg: #1a2d42;
+  --ext-splitter-hover-bg: #3a5570;
+  --ext-selection-bg: #264a6e;
+  --ext-selection-text: #a0d0f0;
+  --ext-progress-bg: #1e2d3d;
+  --ext-progress-bar-bg: #2b74b5;
+  --ext-progress-text: #ffffff;
+  --ext-breadcrumb-color: #8a9bb0;
+  --ext-breadcrumb-active: #5caaed;
+  --ext-tooltip-bg: #2a4055;
+  --ext-tooltip-text: #d4dde6;
+  --ext-messagebox-icon-info: #5caaed;
+  --ext-messagebox-icon-warning: #f5b041;
+  --ext-messagebox-icon-error: #e74c3c;
+  --ext-messagebox-icon-question: #5caaed;
+}
+
+/* Aria dark mode overrides */
+[data-theme='aria'] body {
+  background-color: var(--ext-body-bg) !important;
+  color: var(--ext-text-color);
+}
+
+[data-theme='aria'] .ext-panel {
+  background: #1a2535;
+}
+
+[data-theme='aria'] .ext-panel-header {
+  background: var(--ext-header-bg) !important;
+}
+
+[data-theme='aria'] .ext-panel-body {
+  background: #1a2535;
+  color: var(--ext-text-color);
+}
+
+[data-theme='aria'] .ext-grid table {
+  color: var(--ext-text-color);
+}
+
+[data-theme='aria'] .ext-grid thead th {
+  background: var(--ext-grid-header-bg) !important;
+  color: #b0c4d8;
+  border-color: var(--ext-grid-border);
+}
+
+[data-theme='aria'] .ext-grid tbody td {
+  border-color: var(--ext-grid-cell-border);
+}
+
+[data-theme='aria'] .ext-grid tbody tr:nth-child(even) {
+  background-color: var(--ext-grid-row-alt);
+}
+
+[data-theme='aria'] .ext-toolbar {
+  background: var(--ext-toolbar-bg);
+  border-color: var(--ext-toolbar-border);
+}
+
+[data-theme='aria'] .ext-btn {
+  background: var(--ext-btn-default-bg);
+  border-color: var(--ext-btn-default-border);
+  color: var(--ext-text-color);
+}
+
+[data-theme='aria'] .ext-btn:hover {
+  background: #263d52;
+  border-color: #4a6a85;
+}
+
+[data-theme='aria'] .ext-tab-bar {
+  background: #141e2a;
+}
+
+[data-theme='aria'] .ext-tab {
+  background: var(--ext-tab-inactive-bg) !important;
+  color: #8a9bb0;
+  border-color: var(--ext-tab-border);
+}
+
+[data-theme='aria'] .ext-tab.active {
+  background: var(--ext-tab-active-bg) !important;
+  color: var(--ext-text-color);
+}
+
+[data-theme='aria'] .ext-tab-body {
+  background: #1a2535;
+  color: var(--ext-text-color);
+}
+
+[data-theme='aria'] .ext-tree-node-content:hover {
+  background-color: var(--ext-grid-row-hover);
+}
+
+[data-theme='aria'] .ext-tree-node-content.selected {
+  background-color: var(--ext-grid-row-selected);
+  color: var(--ext-selection-text);
+}
+
+[data-theme='aria'] .ext-statusbar {
+  background: var(--ext-status-bar-bg);
+  color: var(--ext-text-color);
+  border-color: var(--ext-toolbar-border);
+}
+
+[data-theme='aria'] input,
+[data-theme='aria'] select,
+[data-theme='aria'] textarea {
+  background-color: var(--ext-field-bg) !important;
+  color: var(--ext-text-color) !important;
+  border-color: var(--ext-field-border) !important;
+}
+
+[data-theme='aria'] input:focus,
+[data-theme='aria'] select:focus,
+[data-theme='aria'] textarea:focus {
+  border-color: var(--ext-field-focus-border) !important;
+}
+
+[data-theme='aria'] .ext-fieldset {
+  border-color: var(--ext-fieldset-border);
+}
+
+[data-theme='aria'] .ext-fieldset legend {
+  color: #8a9bb0;
+}
+
+[data-theme='aria'] .ext-form-field label {
+  color: #8a9bb0;
+}
+
+[data-theme='aria'] .card {
+  background: #1a2535;
+  border-color: var(--ext-panel-border);
+}
+
+[data-theme='aria'] .card .subheader,
+[data-theme='aria'] .card .h1 {
+  color: var(--ext-text-color) !important;
+}
+
+[data-theme='aria'] .ext-window {
+  background: #1a2535;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='aria'] .ext-splitter {
+  background-color: var(--ext-splitter-bg);
+}
+
+[data-theme='aria'] .ext-paging-toolbar {
+  background: var(--ext-toolbar-bg);
+  border-color: var(--ext-toolbar-border);
+  color: var(--ext-text-color);
+}
+
+[data-theme='aria'] .field-help {
+  color: #6a7b8e;
+}

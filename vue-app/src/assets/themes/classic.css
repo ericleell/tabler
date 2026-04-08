@@ -1,0 +1,59 @@
+/*
+ * ExtJS Classic Theme (Default)
+ * Traditional blue gradient style reminiscent of ExtJS 4.x Classic theme
+ */
+
+[data-theme='classic'],
+:root {
+  /* ExtJS Classic Color Palette */
+  --ext-primary: #2a72b5;
+  --ext-primary-dark: #1e5a92;
+  --ext-primary-darker: #15497a;
+  --ext-primary-light: #dbe9f6;
+  --ext-header-bg: linear-gradient(to bottom, #6db1e5, #2a72b5);
+  --ext-toolbar-bg: #dfe9f5;
+  --ext-toolbar-border: #b5c8de;
+  --ext-panel-border: #a3b8d0;
+  --ext-grid-header-bg: linear-gradient(to bottom, #e8f0f8, #c8d8e8);
+  --ext-grid-row-alt: #f5f9fe;
+  --ext-grid-row-hover: #d9eaf7;
+  --ext-grid-row-selected: #c2d9f0;
+  --ext-grid-border: #d0d0d0;
+  --ext-grid-cell-border: #ededed;
+  --ext-tab-active-bg: #ffffff;
+  --ext-tab-inactive-bg: linear-gradient(to bottom, #d4dfef, #b8c9df);
+  --ext-tab-border: #8db2e3;
+  --ext-field-border: #b5b8c8;
+  --ext-field-focus-border: #7eadd9;
+  --ext-field-bg: #ffffff;
+  --ext-btn-default-bg: linear-gradient(to bottom, #f0f4fa, #d8e2f0);
+  --ext-btn-default-border: #a3b8d0;
+  --ext-body-bg: #e4e9f2;
+  --ext-tree-icon-color: #5b7a9e;
+  --ext-text-color: #333333;
+  --ext-text-muted: #666666;
+  --ext-status-bar-bg: #dfe9f5;
+  --ext-btn-primary-bg: linear-gradient(to bottom, #6db1e5, #2a72b5);
+  --ext-btn-primary-hover-bg: linear-gradient(to bottom, #5aa0d8, #1e5a92);
+  --ext-btn-primary-text: #ffffff;
+  --ext-btn-danger-bg: linear-gradient(to bottom, #e57373, #d32f2f);
+  --ext-btn-danger-hover-bg: linear-gradient(to bottom, #ef5350, #c62828);
+  --ext-btn-danger-text: #ffffff;
+  --ext-window-mask-bg: rgba(0, 0, 0, 0.35);
+  --ext-fieldset-border: #b5c8de;
+  --ext-splitter-bg: #d0dced;
+  --ext-splitter-hover-bg: #a3b8d0;
+  --ext-selection-bg: #c2d9f0;
+  --ext-selection-text: #1e5a92;
+  --ext-progress-bg: #e0e8f0;
+  --ext-progress-bar-bg: linear-gradient(to bottom, #6db1e5, #2a72b5);
+  --ext-progress-text: #ffffff;
+  --ext-breadcrumb-color: #5b7a9e;
+  --ext-breadcrumb-active: #1e5a92;
+  --ext-tooltip-bg: #1e3a5f;
+  --ext-tooltip-text: #ffffff;
+  --ext-messagebox-icon-info: #2a72b5;
+  --ext-messagebox-icon-warning: #f5a623;
+  --ext-messagebox-icon-error: #d32f2f;
+  --ext-messagebox-icon-question: #2a72b5;
+}

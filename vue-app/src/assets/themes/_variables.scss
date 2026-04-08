@@ -1,0 +1,7 @@
+// Shared SCSS variables used across themes
+// Each theme overrides CSS custom properties defined here
+
+// Base font stack
+$ext-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$ext-font-family-mono: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$ext-font-size-base: 12px;

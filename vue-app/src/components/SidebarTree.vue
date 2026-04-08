@@ -82,6 +82,12 @@ const treeData = [
       { id: 'settings-security', label: 'Security', icon: '&#128274;', path: '/settings' },
     ],
   },
+  {
+    id: 'components',
+    label: 'Components',
+    icon: '&#128300;',
+    path: '/components',
+  },
 ]
 
 function filterTree(nodes, text) {

@@ -9,36 +9,7 @@
  * - Tab panels with top tabs
  */
 
-:root {
-  /* ExtJS Classic Color Palette */
-  --ext-primary: #2a72b5;
-  --ext-primary-dark: #1e5a92;
-  --ext-primary-darker: #15497a;
-  --ext-primary-light: #dbe9f6;
-  --ext-header-bg: linear-gradient(to bottom, #6db1e5, #2a72b5);
-  --ext-toolbar-bg: #dfe9f5;
-  --ext-toolbar-border: #b5c8de;
-  --ext-panel-border: #a3b8d0;
-  --ext-grid-header-bg: linear-gradient(to bottom, #e8f0f8, #c8d8e8);
-  --ext-grid-row-alt: #f5f9fe;
-  --ext-grid-row-hover: #d9eaf7;
-  --ext-grid-row-selected: #c2d9f0;
-  --ext-grid-border: #d0d0d0;
-  --ext-grid-cell-border: #ededed;
-  --ext-tab-active-bg: #ffffff;
-  --ext-tab-inactive-bg: linear-gradient(to bottom, #d4dfef, #b8c9df);
-  --ext-tab-border: #8db2e3;
-  --ext-field-border: #b5b8c8;
-  --ext-field-focus-border: #7eadd9;
-  --ext-field-bg: #ffffff;
-  --ext-btn-default-bg: linear-gradient(to bottom, #f0f4fa, #d8e2f0);
-  --ext-btn-default-border: #a3b8d0;
-  --ext-body-bg: #e4e9f2;
-  --ext-tree-icon-color: #5b7a9e;
-  --ext-text-color: #333333;
-  --ext-text-muted: #666666;
-  --ext-status-bar-bg: #dfe9f5;
-}
+/* Theme variables are now defined in assets/themes/*.css */
 
 /* ========== Base Body ========== */
 body {
@@ -652,4 +623,349 @@ body {
 
 .ext-gap-4 {
   gap: 4px;
+}
+
+/* ========== ComboBox ========== */
+.ext-combobox .ext-combobox-wrap {
+  position: relative;
+  display: flex;
+}
+
+.ext-combobox .ext-combobox-wrap input {
+  flex: 1;
+  padding-right: 24px;
+}
+
+.ext-combobox-trigger {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ext-btn-default-bg);
+  border-left: 1px solid var(--ext-field-border);
+  cursor: pointer;
+  font-size: 10px;
+  color: var(--ext-text-color);
+}
+
+.ext-combobox-trigger:hover {
+  background: var(--ext-grid-row-hover);
+}
+
+.ext-combobox-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--ext-field-bg);
+  border: 1px solid var(--ext-field-border);
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.ext-combobox-item {
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--ext-text-color);
+}
+
+.ext-combobox-item:hover,
+.ext-combobox-item.highlighted {
+  background: var(--ext-grid-row-hover);
+}
+
+.ext-combobox-item.selected {
+  background: var(--ext-grid-row-selected);
+  font-weight: 600;
+}
+
+.ext-combobox-empty {
+  padding: 8px;
+  text-align: center;
+  color: var(--ext-text-muted);
+  font-size: 11px;
+  font-style: italic;
+}
+
+/* ========== MessageBox ========== */
+.ext-messagebox-mask {
+  z-index: 10000;
+}
+
+.ext-messagebox {
+  min-width: 300px;
+}
+
+.ext-messagebox-body {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 20px;
+}
+
+.ext-messagebox-icon {
+  flex-shrink: 0;
+}
+
+.ext-messagebox-content {
+  flex: 1;
+}
+
+.ext-messagebox-content p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ext-text-color);
+}
+
+.ext-messagebox-input input {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid var(--ext-field-border);
+  font-size: 12px;
+  background: var(--ext-field-bg);
+  color: var(--ext-text-color);
+}
+
+.ext-messagebox-input input:focus {
+  border-color: var(--ext-field-focus-border);
+  outline: none;
+}
+
+/* ========== Progress Bar ========== */
+.ext-progress {
+  height: 20px;
+  background: var(--ext-progress-bg, #e0e8f0);
+  border: 1px solid var(--ext-panel-border);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ext-progress-with-text {
+  min-width: 100px;
+}
+
+.ext-progress-bar {
+  height: 100%;
+  background: var(--ext-progress-bar-bg, linear-gradient(to bottom, #6db1e5, #2a72b5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease;
+  min-width: 0;
+}
+
+.ext-progress-text {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ext-progress-text, #ffffff);
+  white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ext-progress-label {
+  font-size: 11px;
+  color: var(--ext-text-color);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* ========== Tooltip ========== */
+.ext-tooltip-trigger {
+  display: inline-flex;
+}
+
+.ext-tooltip {
+  pointer-events: none;
+  animation: ext-tooltip-fade-in 0.15s ease;
+}
+
+.ext-tooltip-content {
+  background: var(--ext-tooltip-bg, #1e3a5f);
+  color: var(--ext-tooltip-text, #ffffff);
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.ext-tooltip-arrow {
+  display: none; /* Arrow can be added per-theme if desired */
+}
+
+@keyframes ext-tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Breadcrumb ========== */
+.ext-breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 12px;
+  background: var(--ext-toolbar-bg);
+  border-bottom: 1px solid var(--ext-toolbar-border);
+}
+
+.ext-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ext-breadcrumb-item a {
+  color: var(--ext-breadcrumb-color, var(--ext-primary));
+  text-decoration: none;
+}
+
+.ext-breadcrumb-item a:hover {
+  text-decoration: underline;
+  color: var(--ext-primary-dark);
+}
+
+.ext-breadcrumb-item.active {
+  color: var(--ext-breadcrumb-active, var(--ext-text-color));
+  font-weight: 600;
+}
+
+.ext-breadcrumb-separator {
+  margin: 0 6px;
+  color: var(--ext-text-muted);
+}
+
+/* ========== Split Button ========== */
+.ext-split-button {
+  display: inline-flex;
+  position: relative;
+}
+
+.ext-split-button-main {
+  border-radius: 0 !important;
+  border-right: none !important;
+}
+
+.ext-split-button-arrow {
+  border-radius: 0 !important;
+  padding: 3px 6px !important;
+  min-width: 20px;
+  font-size: 9px;
+}
+
+.ext-split-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background: var(--ext-field-bg);
+  border: 1px solid var(--ext-panel-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.ext-split-menu-item {
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--ext-text-color);
+  display: flex;
+  align-items: center;
+}
+
+.ext-split-menu-item:hover {
+  background: var(--ext-grid-row-hover);
+}
+
+.ext-split-menu-item.disabled {
+  color: var(--ext-text-muted);
+  cursor: default;
+  opacity: 0.6;
+}
+
+.ext-split-menu-item.disabled:hover {
+  background: transparent;
+}
+
+.ext-split-menu-separator {
+  height: 1px;
+  background: var(--ext-grid-cell-border);
+  margin: 2px 0;
+}
+
+/* ========== Theme Switcher ========== */
+.ext-theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ext-theme-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 11px;
+  color: var(--ext-text-color);
+  transition: border-color 0.2s;
+}
+
+.ext-theme-swatch:hover {
+  border-color: var(--ext-field-border);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ext-theme-swatch.active {
+  border-color: var(--ext-primary);
+  background: var(--ext-primary-light);
+  font-weight: 600;
+}
+
+.swatch-color {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.swatch-classic { background: linear-gradient(135deg, #2a72b5, #6db1e5); }
+.swatch-neptune { background: linear-gradient(135deg, #118899, #4fc3d0); }
+.swatch-triton { background: linear-gradient(135deg, #2196f3, #64b5f6); }
+.swatch-aria { background: linear-gradient(135deg, #0d1520, #1a2d42); }
+
+/* ========== Form Field Enhancements ========== */
+.ext-form-field.has-error input,
+.ext-form-field.has-error select,
+.ext-form-field.has-error textarea {
+  border-color: #d32f2f !important;
+}
+
+.field-error {
+  font-size: 11px;
+  color: #d32f2f;
+  margin-top: 2px;
+}
+
+.ext-form-field.required label::after {
+  content: '';
 }
