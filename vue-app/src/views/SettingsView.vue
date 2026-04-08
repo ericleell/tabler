@@ -179,7 +179,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import ExtPanel from '@/components/ExtPanel.vue'
 import ExtTabPanel from '@/components/ExtTabPanel.vue'
 import { themeStore } from '@/store/theme.js'
@@ -199,10 +199,6 @@ const settings = ref({
   timezone: 'UTC',
   theme: themeStore.state.current,
   pageSize: 20,
-})
-
-onMounted(() => {
-  settings.value.theme = themeStore.state.current
 })
 
 function applyTheme() {

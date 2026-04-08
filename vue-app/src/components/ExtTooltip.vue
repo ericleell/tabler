@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onUnmounted } from 'vue'
 
 const props = defineProps({
   text: { type: String, required: true },
@@ -40,10 +40,10 @@ const visible = ref(false)
 const tooltipStyle = ref({})
 const triggerRef = ref(null)
 const tooltipRef = ref(null)
-let showTimeout = null
+const showTimeout = ref(null)
 
 function show() {
-  showTimeout = setTimeout(async () => {
+  showTimeout.value = setTimeout(async () => {
     visible.value = true
     await nextTick()
     positionTooltip()
@@ -51,9 +51,13 @@ function show() {
 }
 
 function hide() {
-  clearTimeout(showTimeout)
+  clearTimeout(showTimeout.value)
   visible.value = false
 }
+
+onUnmounted(() => {
+  clearTimeout(showTimeout.value)
+})
 
 function positionTooltip() {
   if (!triggerRef.value || !tooltipRef.value) return
@@ -63,7 +67,8 @@ function positionTooltip() {
   const tipEl = tooltipRef.value
   const tipRect = tipEl.getBoundingClientRect()
 
-  let top, left
+  let top = 0
+  let left = 0
 
   switch (props.placement) {
     case 'top':
